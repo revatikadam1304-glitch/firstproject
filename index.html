@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            background-color: rgb(184, 204, 235);
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        #welcomePage {
+            display: none;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        #welcomePage h1 {
+            color: green;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="formPage">
+
+        <h1>Registration Form</h1>
+
+        <form onsubmit="showWelcome(event)">
+
+            <label>Name:</label>
+            <input type="text" required>
+
+            <br><br>
+
+            <label>Gender:</label>
+
+            <input type="radio" name="gender" required> Male
+            <input type="radio" name="gender"> Female
+
+            <br><br>
+
+            <label>Country:</label>
+
+            <select required>
+                <option value="">Select Country</option>
+                <option>India</option>
+                <option>Brazil</option>
+                <option>Canada</option>
+                <option>China</option>
+                <option>Russia</option>
+            </select>
+
+            <br><br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+    <div id="welcomePage">
+        <h1>Welcome!</h1>
+    </div>
+
+    <script>
+        function showWelcome(event) {
+            event.preventDefault();
+
+            document.getElementById("formPage").style.display = "none";
+            document.getElementById("welcomePage").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>
